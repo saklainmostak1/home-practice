@@ -1,32 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
-
-const nayoks = [
-  {name: 'Nayan', job:'student'},
-  {name: 'Hasan', job:'student1'},
-  {name: 'Saklain', job:'student2'},
-  {name: 'Mostak', job:'student3'},
-]
-const singers = ['Nayan', 'Sakib', 'Tamim ', 'Raz', 'avi', 'Ram']
+import { useState } from 'react';
 
 function App() {
   
   return (
     <div className="App">
-    {
-      singers.map(singer => <Student name={singer} ></Student>)
-    }
+      <Counter></Counter>
     </div>
   )
   }
-
-
-  function Student(props){
-    return(
-      <div>
-        <h1>Name: {props.name} </h1>
-        <h2>Job: {props.job} </h2>
-      </div>
-    )
+function Counter(){
+  const [count, setCount] = useState(0)
+  const decrsese = ()=>{
+    const counter = count - 1
+    setCount(counter)
   }
+  return(
+    <div>
+      <h1>Counter: {count} </h1>
+      <button onClick={decrsese}>Decrese</button>
+    </div>
+  )
+}
+
+
 export default App;
