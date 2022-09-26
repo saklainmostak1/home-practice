@@ -40,9 +40,18 @@
   background-color: red;
   color: white;
   border-radius: 15px;
+  border: 2px solid green;
   padding: 15px;
+  margin: 20px;
 }
 .hello:hover{
   background-color: black;
   color: aqua;
+}
+.player{
+  background-color: aqua;
+  border: 3px solid red;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px;
 }
