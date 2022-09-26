@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.hello{
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+.hello:hover{
+  background-color: black;
+  color: aqua;
+}
