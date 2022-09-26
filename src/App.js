@@ -4,40 +4,38 @@ import './App.css';
 
 
 function App() {
-  
   return (
     <div className="App">
-      <ExternalUsers></ExternalUsers>
+    <ExternalUser></ExternalUser>
     </div>
   )
   }
-function ExternalUsers (){
-  const [users, setUsers] = useState([])
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(Response => Response.json())
-    .then(data => setUsers(data))
-  }, [])
 
+  function ExternalUser(){
+    const [users, setUsers] = useState([])
+    useEffect(()=>{
+      fetch('https://jsonplaceholder.typicode.com/users')
+      .then(Response => Response.json())
+      .then(data => setUsers(data))
+    }, [])
+    return(
+      <div>
+        <h1>External Users</h1>
+        <h1>{users.length} </h1>
+        {
+          users.map(user => <User name={user.name} email={user.email}></User> )
+        }
+      </div>
+    )
+  }
 
-  return(
-    <div>
-      <h1>External Users:  </h1>
-      <p>Users: {users.length} </p>
-      {
-        users.map(user => <User name={user.name} email={user.email}></User> )
-      }
-    </div>
-  )
-}
-function User(props){
-  return(
-    <div>
-      <h1>Name: {props.name} </h1>
+  function User(props){
+    return(
+      <div>
+        <h1>Name: {props.name} </h1>
       <h1>Email: {props.email} </h1>
-    </div>
-  )
-}
-
+      </div>
+    )
+  }
 
 export default App;
