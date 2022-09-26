@@ -7,22 +7,25 @@ const nayoks = [
   {name: 'Saklain', job:'student2'},
   {name: 'Mostak', job:'student3'},
 ]
+const singers = ['Nayan', 'Sakib', 'Tamim ', 'Raz', 'avi', 'Ram']
 
 function App() {
   
   return (
     <div className="App">
-     {
-      nayoks.map(nayok => <Student name={nayok.name} job={nayok.job}></Student>)
-     }
+    {
+      singers.map(singer => <Student name={singer} ></Student>)
+    }
     </div>
   )
   }
+
+
   function Student(props){
     return(
       <div>
         <h1>Name: {props.name} </h1>
-        <h2>Job:{props.job}</h2>
+        <h2>Job: {props.job} </h2>
       </div>
     )
   }
