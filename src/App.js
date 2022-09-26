@@ -1,41 +1,28 @@
 
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import './App.css';
 
 
 function App() {
   return (
     <div className="App">
-    <ExternalUser></ExternalUser>
+    <Counter></Counter>
     </div>
   )
   }
 
-  function ExternalUser(){
-    const [users, setUsers] = useState([])
-    useEffect(()=>{
-      fetch('https://jsonplaceholder.typicode.com/users')
-      .then(Response => Response.json())
-      .then(data => setUsers(data))
-    }, [])
-    return(
-      <div>
-        <h1>External Users</h1>
-        <h1>{users.length} </h1>
-        {
-          users.map(user => <User name={user.name} email={user.email}></User> )
-        }
-      </div>
-    )
-  }
-
-  function User(props){
-    return(
-      <div>
-        <h1>Name: {props.name} </h1>
-      <h1>Email: {props.email} </h1>
-      </div>
-    )
-  }
+ function Counter (){
+  const [count, setCount] = useState(0)
+const handleIncrese = () => {
+  const counts = count + 1;
+  setCount(counts)
+}
+  return(
+    <div>
+      <h1>counter: {count} </h1>
+      <button onClick={handleIncrese}>Increse</button>
+    </div>
+  )
+ }
 
 export default App;
