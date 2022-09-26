@@ -7,30 +7,31 @@ const singer =
 function App() {
   return (
     <div className="App">
-     <Person></Person>
-     <Person></Person>
-     <Person></Person>
-     <Person></Person>
+     <Person name='Rubel' naika='sokhina'></Person>
+     <Person name='BappaRaz' naika='jorina'></Person>
+     <Person name='majhi' naika='kopila' ></Person>
+   
      <h5>New Component</h5>
-     <Friend></Friend>
-     <Friend></Friend>
-     <Friend></Friend>
+     <Friend naika='kajal' phone='01823762'></Friend>
+     <Friend naika='adha sharma' phone='uewreh'></Friend>
+    
     </div>
   );
 }
-function Person(){
+function Person(props){
+  console.log(props)
   return(
     <div className='player'>
-      <h1>Sakib Al Hasan</h1>
-      <p>Profession: Crickter</p>
+      <h1>Name: {props.name}</h1>
+      <p>naika: {props.naika}</p>
     </div>
   )
 }
-function Friend(){
+function Friend(props){
   return(
     <div className='hello'>
-      <h3>Name: Ajay Dev Gan</h3>
-      <p>Job: Maramari</p>
+      <h3>Name:{props.phone} </h3>
+      <p>naika:{props.naika}  </p>
     </div>
   )
 }
