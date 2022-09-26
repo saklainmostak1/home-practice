@@ -1,38 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-const singer = 
-  {name: 'nayan', profession: 'singer'}
-  
+
+const nayoks = [
+  {name: 'Nayan', job:'student'},
+  {name: 'Hasan', job:'student1'},
+  {name: 'Saklain', job:'student2'},
+  {name: 'Mostak', job:'student3'},
+]
 
 function App() {
+  
   return (
     <div className="App">
-     <Person name='Rubel' naika='sokhina'></Person>
-     <Person name='BappaRaz' naika='jorina'></Person>
-     <Person name='majhi' naika='kopila' ></Person>
-   
-     <h5>New Component</h5>
-     <Friend naika='kajal' phone='01823762'></Friend>
-     <Friend naika='adha sharma' phone='uewreh'></Friend>
-    
-    </div>
-  );
-}
-function Person(props){
-  console.log(props)
-  return(
-    <div className='player'>
-      <h1>Name: {props.name}</h1>
-      <p>naika: {props.naika}</p>
+     {
+      nayoks.map(nayok => <Student name={nayok.name} job={nayok.job}></Student>)
+     }
     </div>
   )
-}
-function Friend(props){
-  return(
-    <div className='hello'>
-      <h3>Name:{props.phone} </h3>
-      <p>naika:{props.naika}  </p>
-    </div>
-  )
-}
+  }
+  function Student(props){
+    return(
+      <div>
+        <h1>Name: {props.name} </h1>
+        <h2>Job:{props.job}</h2>
+      </div>
+    )
+  }
 export default App;
